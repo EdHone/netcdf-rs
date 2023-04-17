@@ -247,7 +247,7 @@ fn main() {
         let nc_dir = nc_dir.map(|d| d.join("Library"));
 
         info = if let Some(nc_dir) = nc_dir.as_ref() {
-            NcInfo::gather_from_ncconfig(Some(nc_dir)).unwrap_or_else(|| NcInfo::from_path(nc_dir))
+            NcInfo::from_path(nc_dir)
         } else {
             NcInfo::gather_from_ncconfig(None).unwrap_or_else(NcInfo::guess)
         };
